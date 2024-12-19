@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline Scroll</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      font-family: Harding, Palatino, Times, "Times New Roman", serif;
+      background: #323360;
+    }
+
+    .timeline {
+      width: 150px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+    }
+
+    .timeline .line {
+      position: relative;
+      width: 4px;
+
+    }
+
+    .linecontent {
+      position: absolute;
+      top: 5%;
+      left: 0;
+      width: 100%;
+      height: 90%;
+
+    }
+
+    .timeline .line img {
+      width: 14px;
+      height: 100vh;
+    }
+
+    .timeline .line .point {
+      width: 24px;
+      height: 24px;
+      background-color: #d3ab51;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-30%);
+      cursor: pointer;
+    }
+
+    .timeline .line .point.active {
+      background-color: #d25a4f;
+    }
+
+    .timeline .line .point:hover {
+      background-color: #d25a4f;
+    }
+
+    .timeline .line .year-label {
+      position: absolute;
+      left: -50px;
+      transform: translateY(-50%);
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .content {
+      width: calc(100vw - 150px);
+      height: 100vh;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
+    .section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      color: white;
+    }
+
+    .sectionitem {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .sectionitem:hover {
+      opacity: 0.8;
+    }
+
+    .sectionitem img {
+      width: calc(100vw / 3.1);
+      height: calc(100vw / 3.1);
+      object-fit: cover;
+      border-radius: 100%;
+      margin-right: 38px;
+    }
+
+    .sectionitem .itemright {
+      width: 700px;
+    }
+
+    .itemright .text1 {
+      font-size: 30px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .itemright .text2 {
+      color: #d3ab52;
+      font-size: 35px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #d3ab52;
+    }
+
+
+
+    .itemright .text3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 30px;
+    }
+
+    .itemright .text4 {
+      color: #fff;
+      font-size: 18px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="timeline">
+    <div class="line">
+      <img src="./img/line.png" alt="">
+      <div class="linecontent" id="timeline-line"></div>
+    </div>
+  </div>
+
+  <div class="content" id="content">
+    <!-- 
+      修改文本注意事项：
+      1.修改文本的时候请注意 每个id后面会对应一个数字， 这个数组是和下面的years一一对应的   例如第一个  id="year-1994"  对应的years数组是1994
+      2. 图放在img/pro文件内，直接修改图片名称即可
+    -->
+    <div class="section" id="year-2010">
+      <div class="sectionitem">
+        <img src="./img/pro/1.webp" alt="" />
+        <div class="itemright">
+          <p class="text1">2010</p>
+          <p class="text2">Disentangling tau pathology</p>
+          <p class="text3">The protein tau is identified as the core component of the neurofibrillary tangles — nearly
+            80
+            years after
+            the structures were found in the brains of people with Alzheimer’s disease.</p>
+          <p class="text4">Soon after the characterization of amyloid-β, scientists unmasked the protein that makes up
+            the
+            neurofibrillary tangles spotted by Alois Alzheimer. At the heart of these tiny thread-like structures is tau
+            —
+            a protein that has been implicated in the stabilizing of the microtubules that help cells to maintain their
+            shape, and which is abnormally phosphorylated in the brains of people with Alzheimer’s disease.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="year-2011">
+      <div class="sectionitem">
+        <img src="./img/pro/2.webp" alt="" />
+        <div class="itemright">
+          <p class="text1">2011</p>
+          <p class="text2">Disentangling tau pathology</p>
+          <p class="text3">The protein tau is identified as the core component of the neurofibrillary tangles — nearly
+            80
+            years after
+            the structures were found in the brains of people with Alzheimer’s disease.</p>
+          <p class="text4">Soon after the characterization of amyloid-β, scientists unmasked the protein that makes up
+            the
+            neurofibrillary tangles spotted by Alois Alzheimer. At the heart of these tiny thread-like structures is tau
+            —
+            a protein that has been implicated in the stabilizing of the microtubules that help cells to maintain their
+            shape, and which is abnormally phosphorylated in the brains of people with Alzheimer’s disease.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="year-2013">
+      <div class="sectionitem">
+        <img src="./img/pro/3.webp" alt="" />
+        <div class="itemright">
+          <p class="text1">2013</p>
+          <p class="text2">Disentangling tau pathology</p>
+          <p class="text3">The protein tau is identified as the core component of the neurofibrillary tangles — nearly
+            80
+            years after
+            the structures were found in the brains of people with Alzheimer’s disease.</p>
+          <p class="text4">Soon after the characterization of amyloid-β, scientists unmasked the protein that makes up
+            the
+            neurofibrillary tangles spotted by Alois Alzheimer. At the heart of these tiny thread-like structures is tau
+            —
+            a protein that has been implicated in the stabilizing of the microtubules that help cells to maintain their
+            shape, and which is abnormally phosphorylated in the brains of people with Alzheimer’s disease.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="year-2015">
+      <div class="sectionitem">
+        <img src="./img/pro/4.webp" alt="" />
+        <div class="itemright">
+          <p class="text1">2015</p>
+          <p class="text2">Disentangling tau pathology</p>
+          <p class="text3">The protein tau is identified as the core component of the neurofibrillary tangles — nearly
+            80
+            years after
+            the structures were found in the brains of people with Alzheimer’s disease.</p>
+          <p class="text4">Soon after the characterization of amyloid-β, scientists unmasked the protein that makes up
+            the
+            neurofibrillary tangles spotted by Alois Alzheimer. At the heart of these tiny thread-like structures is tau
+            —
+            a protein that has been implicated in the stabilizing of the microtubules that help cells to maintain their
+            shape, and which is abnormally phosphorylated in the brains of people with Alzheimer’s disease.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="year-2017">
+      <div class="sectionitem">
+        <img src="./img/pro/5.webp" alt="" />
+        <div class="itemright">
+          <p class="text1">2017</p>
+          <p class="text2">Disentangling tau pathology</p>
+          <p class="text3">The protein tau is identified as the core component of the neurofibrillary tangles — nearly
+            80
+            years after
+            the structures were found in the brains of people with Alzheimer’s disease.</p>
+          <p class="text4">Soon after the characterization of amyloid-β, scientists unmasked the protein that makes up
+            the
+            neurofibrillary tangles spotted by Alois Alzheimer. At the heart of these tiny thread-like structures is tau
+            —
+            a protein that has been implicated in the stabilizing of the microtubules that help cells to maintain their
+            shape, and which is abnormally phosphorylated in the brains of people with Alzheimer’s disease.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="year-2020">
+      <div class="sectionitem">
+        <img src="./img/pro/6.webp" alt="" />
+        <div class="itemright">
+          <p class="text1">2020</p>
+          <p class="text2">Disentangling tau pathology</p>
+          <p class="text3">The protein tau is identified as the core component of the neurofibrillary tangles — nearly
+            80
+            years after
+            the structures were found in the brains of people with Alzheimer’s disease.</p>
+          <p class="text4">Soon after the characterization of amyloid-β, scientists unmasked the protein that makes up
+            the
+            neurofibrillary tangles spotted by Alois Alzheimer. At the heart of these tiny thread-like structures is tau
+            —
+            a protein that has been implicated in the stabilizing of the microtubules that help cells to maintain their
+            shape, and which is abnormally phosphorylated in the brains of people with Alzheimer’s disease.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="section" id="year-2023">
+      <div class="sectionitem">
+        <img src="./img/pro/7.webp" alt="" />
+        <div class="itemright">
+          <p class="text1">2023</p>
+          <p class="text2">Disentangling tau pathology</p>
+          <p class="text3">The protein tau is identified as the core component of the neurofibrillary tangles — nearly
+            80
+            years after
+            the structures were found in the brains of people with Alzheimer’s disease.</p>
+          <p class="text4">Soon after the characterization of amyloid-β, scientists unmasked the protein that makes up
+            the
+            neurofibrillary tangles spotted by Alois Alzheimer. At the heart of these tiny thread-like structures is tau
+            —
+            a protein that has been implicated in the stabilizing of the microtubules that help cells to maintain their
+            shape, and which is abnormally phosphorylated in the brains of people with Alzheimer’s disease.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // 年份修改   时间线的刻度是 一年，刻度的高取决于年份的跨度
+    const years = [2010, 2011, 2013, 2015, 2017, 2020, 2023];
+
+    const startYear = Math.min(...years);
+    const endYear = Math.max(...years);
+
+    const timelineLine = document.getElementById('timeline-line');
+    const content = document.getElementById('content');
+
+    years.forEach(year => {
+      const point = document.createElement('div');
+      point.className = 'point';
+      point.dataset.year = year;
+      point.style.top = `${((year - startYear) / (endYear - startYear)) * 100}%`;
+      point.onclick = () => scrollToSection(`year-${year}`);
+
+      // Create year label
+      const label = document.createElement('div');
+      label.className = 'year-label';
+      label.textContent = year;
+      point.appendChild(label);
+
+      timelineLine.appendChild(point);
+    });
+
+    function scrollToSection(id) {
+      const targetSection = document.getElementById(id);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    const sections = document.querySelectorAll('.section');
+    const points = document.querySelectorAll('.timeline .line .point');
+
+    content.addEventListener('scroll', () => {
+      let index = -1;
+      let minDistance = Infinity;
+
+      sections.forEach((section, i) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top - window.innerHeight / 2);
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          index = i;
+        }
+      });
+
+      points.forEach((point, i) => {
+        if (i === index) {
+          point.classList.add('active');
+        } else {
+          point.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
