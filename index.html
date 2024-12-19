@@ -18,6 +18,8 @@
       background: #323360;
     }
 
+
+
     .timeline {
       width: 150px;
       position: sticky;
@@ -146,6 +148,68 @@
       color: #fff;
       font-size: 18px;
       margin-top: 8px;
+    }
+
+    /* 媒体查询 */
+
+    @media (max-width: 768px) {
+      .timeline {
+        display: none;
+      }
+
+      .content {
+        width: 100%;
+      }
+
+      .section {
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: white;
+        padding: 100px 10px;
+      }
+
+      .sectionitem {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .sectionitem img {
+        width: calc(100vw / 1.2);
+        height: calc(100vw / 1.2);
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .sectionitem .itemright {
+        width: 100%;
+        padding: 0 15px;
+      }
+
+      .itemright .text1 {
+        font-size: 22px;
+      }
+
+      .itemright .text2 {
+        border: none;
+        font-size: 25px;
+
+      }
+
+      .itemright .text3 {
+        font-size: 20px;
+        line-height: 26px;
+      }
+
+      .itemright .text4 {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
