@@ -18,6 +18,19 @@
       background: #323360;
     }
 
+    .banner {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .banner1 {
+      display: block;
+    }
+
+    .banner2 {
+      display: none;
+    }
 
 
     .timeline {
@@ -210,6 +223,14 @@
       .itemright .text4 {
         font-size: 16px;
       }
+
+      .banner1 {
+        display: none;
+      }
+
+      .banner2 {
+        display: block;
+      }
     }
   </style>
 </head>
@@ -223,6 +244,8 @@
   </div>
 
   <div class="content" id="content">
+    <img src="./img/banner.jpg" class="banner1 banner" alt="" />
+    <img src="./img/banner-phone.jpg" class="banner2 banner" alt="" />
     <!-- 
       修改文本注意事项：
       1.修改文本的时候请注意 每个id后面会对应一个数字， 这个数组是和下面的years一一对应的   例如第一个  id="year-1994"  对应的years数组是1994
